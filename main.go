@@ -8,13 +8,13 @@ func home_page(page http.ResponseWriter, r *http.Request){
 }
 
 func contacts_page(page http.ResponseWriter, r *http.Request){
-  fmt.Fprintf(page, "contacts page!")
+  fmt.Fprintf(page, "first page!")
 }
 
 func handleRequest(){
   //fmt.Println("Hello world")
   http.HandleFunc("/", home_page)//home_page это название метода
-  http.HandleFunc("/contacts/", contacts_page) //contacts просто название, может быть любым
+  http.HandleFunc("/firstpage/", contacts_page) //contacts просто название, может быть любым
   http.ListenAndServe(":8080", nil)//Порт, nil это null или none(настройки для самого сервера)
 }
 
